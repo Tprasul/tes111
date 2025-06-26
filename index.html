@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html  >
 <head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR - Опрос</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
   
-  <!-- Стили -->
-  <style>
+  
+  <title>kasstp</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=eLvc7w"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=eLvc7w" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"><title class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">HR - Опрос</title><style class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
+    /* Глобальные настройки для отзывчивого дизайна */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #f8f8f8;
       display: flex;
@@ -15,12 +40,11 @@
       min-height: 100vh;
       margin: 0;
       padding: 20px;
-      box-sizing: border-box;
+      font-family: sans-serif; /* Перенесено из .form-container */
     }
     .form-container {
       max-width: 600px;
       width: 100%;
-      font-family: sans-serif;
       padding: 30px;
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -44,31 +68,51 @@
       margin-bottom: 30px;
       color: #333;
     }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 25px;
-      margin-bottom: 12px;
-      color: #555;
-      line-height: 1.4;
+    .question-frame { /* Style for question frames */
+      border: 1px solid #ffcccb; /* Lighter border for frame */
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px; /* Space below each frame */
+      background-color: #fffafa; /* Very light background for frame */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+    .question-frame label { /* Adjust label inside frame */
+        margin-top: 0; 
+        margin-bottom: 12px; 
+        display: block; 
+        font-weight: bold; /* Перенесено из основного label */
+        color: #555; /* Перенесено из основного label */
+        line-height: 1.4; /* Перенесено из основного label */
+    }
+    /* Сброс стилей для основного label, так как они теперь в .question-frame label */
+    label {
+        font-weight: normal; 
+        display: inline; /* Не блочный элемент, если не внутри рамки */
+        margin-top: 0;
+        margin-bottom: 0;
+        color: inherit;
+        line-height: normal;
+    }
+
     input[type="text"], textarea {
-      width: calc(100% - 24px); /* Adjust for padding/border */
+      width: 100%; /* Упрощено, т.к. box-sizing: border-box */
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 16px;
-      box-sizing: border-box; /* Include padding/border in width */
+      margin-bottom: 0; 
     }
     textarea {
       resize: vertical; /* Allow vertical resizing */
       min-height: 80px;
     }
     .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 15px;
+      display: flex; 
+      flex-direction: row; /* Options on one line */
+      gap: 20px; /* Space between options */
+      margin-bottom: 0; 
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      justify-content: flex-start; /* Align items to the start */
     }
     .radio-option {
       display: flex;
@@ -77,18 +121,19 @@
       cursor: pointer;
       padding: 10px;
       border-radius: 8px;
-      background-color: #fdf5e6; /* Lighter background for options */
+      background-color: transparent; /* Removed background color */
       transition: background-color 0.2s ease;
+      flex-shrink: 0; 
     }
     .radio-option:hover {
-      background-color: #faebd7;
+      background-color: #f0f0f0; /* Slight hover effect, almost transparent */
     }
     .radio-option input[type="radio"] {
       display: none;
     }
     .custom-radio {
-      flex-shrink: 0; /* Prevent shrinking */
-      width: 35px; /* Slightly smaller for better visual balance */
+      flex-shrink: 0; 
+      width: 35px; 
       height: 35px;
       background-color: #eee;
       border-radius: 50%;
@@ -119,161 +164,200 @@
       cursor: pointer;
       width: 100%;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
     .submit-btn:hover:not(:disabled) {
       background-color: #b71c1c;
       transform: translateY(-2px);
     }
     .submit-btn:disabled {
-      background-color: #ff7f7f; /* Lighter red when disabled */
+      background-color: #ff7f7f; 
       cursor: not-allowed;
       box-shadow: none;
     }
-    #cameraInput {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      width: calc(100% - 24px);
-      box-sizing: border-box;
-      margin-top: 10px;
-    }
-  </style>
-  
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body>
-  
-  <div class="form-container">
-    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"></script><div class="form-container cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     
     <div class="form-title">Опрос - КАССИР</div>
     <form id="customForm">
-      <label for="yourName">Ваше имя:</label>
-      <input type="text" id="yourName" name="yourName" required>
-      
-      <label for="employeeName">Имя сотрудника:</label>
-      <input type="text" id="employeeName" name="employeeName" required>
-      
-      <label>Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q1_health" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q1_health" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Name field wrapped in question-frame -->
+      <div class="question-frame">
+        <label for="yourName">Ваше имя:</label>
+        <input type="text" id="yourName" name="yourName" required="">
       </div>
       
-      <label>Соблюдает правила мытья рук / правила использования перчаток при работе с продуктом:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q2_hands" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q2_hands" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Employee name field wrapped in question-frame -->
+      <div class="question-frame">
+        <label for="employeeName">Имя сотрудника:</label>
+        <input type="text" id="employeeName" name="employeeName" required="">
       </div>
       
-      <label>Обеспечивает отсутствие перекрестного загрязнения:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q3_cross_contam" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q3_cross_contam" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 1 -->
+      <div class="question-frame">
+        <label>Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q1_health" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q1_health" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Соблюдает прочие стандарты пищевой безопасности:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q4_food_safety" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q4_food_safety" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 2 -->
+      <div class="question-frame">
+        <label>Соблюдает правила мытья рук / правила использования перчаток при работе с продуктом:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q2_hands" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q2_hands" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q5_shelf_life" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q5_shelf_life" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 3 -->
+      <div class="question-frame">
+        <label>Обеспечивает отсутствие перекрестного загрязнения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q3_cross_contam" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q3_cross_contam" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Соблюдает техники безопасности при работе с оборудованием:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q6_safety_tech" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q6_safety_tech" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 4 -->
+      <div class="question-frame">
+        <label>Соблюдает прочие стандарты пищевой безопасности:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q4_food_safety" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q4_food_safety" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Сообщает менеджеру о любых неисправностях оборудования:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q7_equipment_issues" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q7_equipment_issues" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 5 -->
+      <div class="question-frame">
+        <label>Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q5_shelf_life" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q5_shelf_life" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Знает свои цели и задачи на смену:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q8_shift_goals" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q8_shift_goals" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 6 -->
+      <div class="question-frame">
+        <label>Соблюдает техники безопасности при работе с оборудованием:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q6_safety_tech" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q6_safety_tech" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Приветствует Гостей дружелюбными фразами и визуальным контактом:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q9_greeting" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q9_greeting" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 7 -->
+      <div class="question-frame">
+        <label>Сообщает менеджеру о любых неисправностях оборудования:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q7_equipment_issues" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q7_equipment_issues" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Рассказывает Гостям о новинках, промо-акциях или спецпредложениях, применяет навыки активных продаж:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q10_sales" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q10_sales" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 8 -->
+      <div class="question-frame">
+        <label>Знает свои цели и задачи на смену:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q8_shift_goals" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q8_shift_goals" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Демонстрирует хорошее знание меню, может красочно описать любое блюдо, предлагает эквивалентную замену при отсутствии какого-либо продукта:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q11_menu_knowledge" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q11_menu_knowledge" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 9 -->
+      <div class="question-frame">
+        <label>Приветствует Гостей дружелюбными фразами и визуальным контактом:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9_greeting" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q9_greeting" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Стандарты работы с кассой соблюдаются:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q12_cashier_standards" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q12_cashier_standards" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 10 -->
+      <div class="question-frame">
+        <label>Рассказывает Гостям о новинках, промо-акциях или спецпредложениях, применяет навыки активных продаж:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10_sales" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q10_sales" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Контролирует точность сбора заказа:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q13_order_accuracy" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q13_order_accuracy" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 11 -->
+      <div class="question-frame">
+        <label>Демонстрирует хорошее знание меню, может красочно описать любое блюдо, предлагает эквивалентную замену при отсутствии какого-либо продукта:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q11_menu_knowledge" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q11_menu_knowledge" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>При выдаче заказа, желает Гостю приятного аппетита (или произносит другую уместную фразу) и предлагает посетить ресторан снова.:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q14_farewell" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q14_farewell" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 12 -->
+      <div class="question-frame">
+        <label>Стандарты работы с кассой соблюдаются:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q12_cashier_standards" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q12_cashier_standards" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Соблюдает стандарты скорости обслуживания (прием, оплата, сбор и выдача заказа):</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q15_speed_service" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q15_speed_service" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 13 -->
+      <div class="question-frame">
+        <label>Контролирует точность сбора заказа:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q13_order_accuracy" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q13_order_accuracy" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Поддерживает чистоту рабочей станций в течение всей смены:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q16_cleanliness" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q16_cleanliness" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 14 -->
+      <div class="question-frame">
+        <label>При выдаче заказа, желает Гостю приятного аппетита (или произносит другую уместную фразу) и предлагает посетить ресторан снова.:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q14_farewell" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q14_farewell" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label>Эффективная коммуникация со Скаутом и Менеджером:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="q17_communication" value="Знает" required><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="q17_communication" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Question 15 -->
+      <div class="question-frame">
+        <label>Соблюдает стандарты скорости обслуживания (прием, оплата, сбор и выдача заказа):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q15_speed_service" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q15_speed_service" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       
-      <label for="cameraInput">Сделать фото сотрудника:</label>
-      <input type="file" id="cameraInput" name="cameraInput" accept="image/*" capture="environment" required class="form-control mb-3">
+      <!-- Question 16 -->
+      <div class="question-frame">
+        <label>Поддерживает чистоту рабочей станций в течение всей смены:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q16_cleanliness" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q16_cleanliness" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
       
-      <label for="comment">Комментарий:</label>
-      <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      <!-- Question 17 -->
+      <div class="question-frame">
+        <label>Эффективная коммуникация со Скаутом и Менеджером:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q17_communication" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q17_communication" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      
+      <!-- Comment field wrapped in question-frame -->
+      <div class="question-frame">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      </div>
       
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div>
-  
-  <script>
+  </div><script class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
     document.getElementById("customForm").addEventListener("submit", async function(event) {
-      event.preventDefault(); // Предотвращаем стандартную отправку формы
+      event.preventDefault(); // Prevents default form submission
 
       const btn = document.querySelector(".submit-btn");
-      // Проверяем, если кнопка уже отключена, чтобы предотвратить повторные отправки
       if (btn.disabled) return; 
 
       btn.disabled = true;
@@ -284,42 +368,15 @@
         const yourName = form.yourName.value.trim();
         const employeeName = form.employeeName.value.trim();
         const comment = form.comment.value.trim();
-        const fileInput = document.getElementById("cameraInput");
-        const file = fileInput.files[0];
-
-        // --- Проверка наличия фото ---
-        if (!file) {
-          Swal.fire({
-            title: "Ошибка",
-            text: "Пожалуйста, сделайте фото сотрудника. Это обязательное поле.",
-            icon: 'error',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#d32f2f'
-          });
-          btn.disabled = false;
-          btn.textContent = "Закончить опрос";
-          return;
-        }
-
-        // --- Расчет процента знаний ---
+        
+        // --- Calculate knowledge percentage ---
         const correctAnswersValues = {
-          "q1_health": "Знает",
-          "q2_hands": "Знает",
-          "q3_cross_contam": "Знает",
-          "q4_food_safety": "Знает",
-          "q5_shelf_life": "Знает",
-          "q6_safety_tech": "Знает",
-          "q7_equipment_issues": "Знает",
-          "q8_shift_goals": "Знает",
-          "q9_greeting": "Знает",
-          "q10_sales": "Знает",
-          "q11_menu_knowledge": "Знает",
-          "q12_cashier_standards": "Знает",
-          "q13_order_accuracy": "Знает",
-          "q14_farewell": "Знает",
-          "q15_speed_service": "Знает",
-          "q16_cleanliness": "Знает",
-          "q17_communication": "Знает"
+          "q1_health": "Знает", "q2_hands": "Знает", "q3_cross_contam": "Знает", 
+          "q4_food_safety": "Знает", "q5_shelf_life": "Знает", "q6_safety_tech": "Знает", 
+          "q7_equipment_issues": "Знает", "q8_shift_goals": "Знает", "q9_greeting": "Знает", 
+          "q10_sales": "Знает", "q11_menu_knowledge": "Знает", "q12_cashier_standards": "Знает", 
+          "q13_order_accuracy": "Знает", "q14_farewell": "Знает", "q15_speed_service": "Знает", 
+          "q16_cleanliness": "Знает", "q17_communication": "Знает"
         };
         
         let score = 0;
@@ -333,68 +390,56 @@
         }
         const percent = Math.round((score / totalQuestions) * 100);
 
-        // --- Подготовка FormData для отправки всех данных (текст + файл) ---
+        // --- Prepare FormData for sending only text data ---
         const formDataToSend = new FormData();
         formDataToSend.append("yourName", yourName);
         formDataToSend.append("employeeName", employeeName);
-        formDataToSend.append("comment", comment);
-        formDataToSend.append("Процент знаний", percent + "%"); // Отправляем процент как строку
+        formDataToSend.append("comment", comment); 
+        formDataToSend.append("Процент знаний", percent + "%"); 
 
-        // Добавляем все ответы с радио-кнопок
+        // Add all radio button answers
         for (const qName in correctAnswersValues) {
             const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value || "";
-            // Используем полный текст вопроса в качестве ключа для Google Таблицы
-            // Важно, чтобы этот текст совпадал с заголовком столбца в таблице!
-            let questionText = document.querySelector(`label[for="${qName}"]`)?.textContent.trim() || qName;
-            // Здесь нужно жестко задать текст вопросов, если label for не используются или обрезаны
-            // Пример: if (qName === "q1_health") questionText = "Нет видимых признаков заболевания...";
-            // ИЛИ просто используйте полные тексты вопросов как ключи в formDataToSend.append,
-            // как это было в вашем изначальном коде с formData для SheetDB.
-            // Для простоты, давайте воспользуемся тем, что e.parameter в Apps Script
-            // получит значения по `name` атрибутам радио-кнопок.
-            // Так что, просто передаем их напрямую, а в Apps Script их будем извлекать по qName.
             formDataToSend.append(qName, selectedValue);
         }
         
-        // Добавляем файл
-        formDataToSend.append("cameraInput", file); // 'cameraInput' - имя поля type="file"
+        // --- Google Apps Script web app URL ---
+        // !!! REPLACE THIS URL WITH YOUR DEPLOYED APPS SCRIPT URL !!!
+        // (Apps Script now only accepts text data, no photos)
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxX_7kZSDaglB9j1GfmVQGUHP1cEQyvUdYyJztzZJU-bPZBU5pUr5umRfY2zIxFI3Ry/exec'; 
 
-        // --- URL вашего Google Apps Script веб-приложения ---
-        // !!! ЗАМЕНИТЕ ЭТОТ URL НА URL ВАШЕГО РАЗВЕРНУТОГО APPS SCRIPT ИЗ ШАГА 2 !!!
-        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbw9YBQRMcCneylT8xNsDmfvTtsW68TXyhtIRWtiCp9QEmFya7nxIsUKfEG1hrJxn-hP/exec'; 
-
-        // --- Отправка данных ---
+        // --- Send data ---
         const response = await fetch(appsScriptUrl, {
           method: "POST",
-          body: formDataToSend // FormData автоматически устанавливает Content-Type: multipart/form-data
+          body: formDataToSend 
         });
 
-        const result = await response.json(); // Ожидаем JSON ответ от Apps Script
+        const result = await response.json(); 
 
         if (response.ok && result.status === 'success') {
           Swal.fire({
-            title: "HR - Опрос",
+            title: "Опрос - Кассир",
             html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
             icon: 'success',
             confirmButtonText: 'OK',
             confirmButtonColor: '#d32f2f'
           });
-          form.reset(); // Очищаем форму
+          form.reset(); 
         } else {
-          console.error("Ошибка при отправке в Apps Script:", result);
+          console.error("Error sending to Apps Script:", result);
           Swal.fire({
-            title: "Ошибка",
-            text: `Не удалось отправить данные: ${result.message || 'Неизвестная ошибка.'}`,
+            title: "Error",
+            text: `Failed to send data: ${result.message || 'Unknown error.'}`,
             icon: 'error',
             confirmButtonText: 'OK',
             confirmButtonColor: '#d32f2f'
           });
         }
       } catch (error) {
-        console.error("Общая ошибка:", error);
+        console.error("General error:", error);
         Swal.fire({
-          title: "Ошибка",
-          text: "Произошла непредвиденная ошибка. Проверьте консоль.",
+          title: "Error",
+          text: "An unexpected error occurred. Check the console.",
           icon: 'error',
           confirmButtonText: 'OK',
           confirmButtonColor: '#d32f2f'
@@ -404,6 +449,9 @@
         btn.textContent = "Закончить опрос";
       }
     });
-  </script>
-</body>
+  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-generator.html">AI Website Generator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
 </html>
