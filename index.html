@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=eLvc7w"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=eLvc7w" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=vx63El"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=vx63El" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"><title class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">HR - Опрос</title><style class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
+  <meta charset="UTF-8" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506"><title class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506">HR - Опрос</title><style class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506">
     /* Глобальные настройки для отзывчивого дизайна */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -35,21 +35,23 @@
     body {
       background-color: #f8f8f8;
       display: flex;
+      flex-direction: column; /* Изменено на column, чтобы контент мог выравниваться по центру вертикально */
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 20px;
-      font-family: sans-serif; /* Перенесено из .form-container */
+      padding: 20px; /* Отступ по краям для мобильных */
+      font-family: sans-serif;
     }
     .form-container {
       max-width: 600px;
-      width: 100%;
+      width: 100%; /* Занимает всю доступную ширину до max-width */
       padding: 30px;
       border: 1px solid #ddd;
       border-radius: 12px;
       background-color: #FFE4E1; /* Light red/pink */
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      /* margin: auto; // Убираем, т.к. flexbox body будет центрировать */
     }
     .avatar-img {
       width: 150px;
@@ -80,14 +82,16 @@
         margin-top: 0; 
         margin-bottom: 12px; 
         display: block; 
-        font-weight: bold; /* Перенесено из основного label */
-        color: #555; /* Перенесено из основного label */
-        line-height: 1.4; /* Перенесено из основного label */
+        font-weight: bold; 
+        color: #555; 
+        line-height: 1.4; 
+        word-wrap: break-word; /* Обеспечивает перенос длинных слов */
+        overflow-wrap: break-word; /* Дополнительная поддержка переноса */
     }
     /* Сброс стилей для основного label, так как они теперь в .question-frame label */
     label {
         font-weight: normal; 
-        display: inline; /* Не блочный элемент, если не внутри рамки */
+        display: inline; 
         margin-top: 0;
         margin-bottom: 0;
         color: inherit;
@@ -95,7 +99,7 @@
     }
 
     input[type="text"], textarea {
-      width: 100%; /* Упрощено, т.к. box-sizing: border-box */
+      width: 100%; 
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
@@ -103,13 +107,13 @@
       margin-bottom: 0; 
     }
     textarea {
-      resize: vertical; /* Allow vertical resizing */
+      resize: vertical; 
       min-height: 80px;
     }
     .radio-group {
       display: flex; 
-      flex-direction: row; /* Options on one line */
-      gap: 20px; /* Space between options */
+      flex-direction: row; /* Default: options on one line */
+      gap: 20px; 
       margin-bottom: 0; 
       flex-wrap: wrap; /* Allow wrapping on smaller screens */
       justify-content: flex-start; /* Align items to the start */
@@ -121,12 +125,12 @@
       cursor: pointer;
       padding: 10px;
       border-radius: 8px;
-      background-color: transparent; /* Removed background color */
+      background-color: transparent; 
       transition: background-color 0.2s ease;
       flex-shrink: 0; 
     }
     .radio-option:hover {
-      background-color: #f0f0f0; /* Slight hover effect, almost transparent */
+      background-color: #f0f0f0; 
     }
     .radio-option input[type="radio"] {
       display: none;
@@ -175,7 +179,69 @@
       cursor: not-allowed;
       box-shadow: none;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347"></script><div class="form-container cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
+
+    /* Медиа-запросы для адаптации на мобильных устройствах */
+    @media (max-width: 768px) {
+        body {
+            padding: 15px; /* Меньший отступ на маленьких экранах */
+        }
+        .form-container {
+            padding: 20px;
+        }
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .question-frame {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .question-frame label {
+            font-size: 15px;
+        }
+        input[type="text"], textarea {
+            font-size: 15px;
+            padding: 10px;
+        }
+        .radio-group {
+            flex-direction: column; /* Варианты ответов в столбик на мобильных */
+            gap: 8px; /* Уменьшаем расстояние между вариантами */
+        }
+        .radio-option {
+            padding: 8px;
+        }
+        .custom-radio {
+            width: 30px; /* Немного уменьшаем размер кружка */
+            height: 30px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+        .form-container {
+            padding: 15px;
+        }
+        .form-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .avatar-img {
+            width: 120px;
+            height: 120px;
+        }
+        .question-frame {
+            margin-bottom: 15px;
+        }
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506"></script><div class="form-container cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     
     <div class="form-title">Опрос - КАССИР</div>
@@ -353,7 +419,7 @@
       
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="347">
+  </div><script class="cid-uPcdH6Mrwb" id="custom-html-59" data-rv-view="506">
     document.getElementById("customForm").addEventListener("submit", async function(event) {
       event.preventDefault(); // Prevents default form submission
 
@@ -406,7 +472,7 @@
         // --- Google Apps Script web app URL ---
         // !!! REPLACE THIS URL WITH YOUR DEPLOYED APPS SCRIPT URL !!!
         // (Apps Script now only accepts text data, no photos)
-        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxX_7kZSDaglB9j1GfmVQGUHP1cEQyvUdYyJztzZJU-bPZBU5pUr5umRfY2zIxFI3Ry/exec'; 
+        const appsScriptUrl = 'ВАШ_РАЗВЕРНУТЫЙ_URL_GOOGLE_APPS_SCRIPT_ДЛЯ_ТЕКСТА_БЕЗ_ФОТО'; 
 
         // --- Send data ---
         const response = await fetch(appsScriptUrl, {
@@ -418,7 +484,7 @@
 
         if (response.ok && result.status === 'success') {
           Swal.fire({
-            title: "Опрос - Кассир",
+            title: "HR - Опрос",
             html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
             icon: 'success',
             confirmButtonText: 'OK',
